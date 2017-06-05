@@ -8,8 +8,7 @@ app.controller('EditTaskCtrl', function($scope, $routeParams, DataFactory, $loca
   	dueDate: "",
   	urgency: "",
   	description: "",
-  	isCompleted: "",
-  	task: ""
+  	isCompleted: ""
   };
 
 	DataFactory.getTask($routeParams.taskId)
@@ -22,7 +21,7 @@ app.controller('EditTaskCtrl', function($scope, $routeParams, DataFactory, $loca
     // stuff goes here
     DataFactory.editTask($routeParams.taskId, $scope.task)
     .then( (response) => {
-    	$location.path("/");
+    	$location.path("/task-list");
     });
     console.log("task", $scope.task);
     console.log("You clicked the edit task button!");
